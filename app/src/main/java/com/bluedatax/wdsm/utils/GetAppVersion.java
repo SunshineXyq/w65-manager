@@ -8,7 +8,7 @@ import android.content.pm.PackageManager;
  * Created by xuyuanqiang on 7/23/16.
  */
 public class GetAppVersion {
-    public static Context mContext;
+    Context mContext;
     public GetAppVersion(Context c){
         mContext = c;
     }
@@ -27,7 +27,7 @@ public class GetAppVersion {
         }
         return pi;
     }
-    public static String getVersion(){
+    public String getVersion(){
 
         PackageManager manager = mContext.getPackageManager();
 

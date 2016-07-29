@@ -24,9 +24,10 @@ import com.bluedatax.wdsm.utils.GetTime;
 import com.bluedatax.wdsm.utils.MD5Utils;
 import com.bluedatax.wdsm.utils.SharedPrefsUtil;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
-public class LoginActivity extends ActionBarActivity implements View.OnClickListener{
+public class LoginActivity extends ActionBarActivity implements View.OnClickListener {
 
     private Button btnLogin;
     private MyService mService;
@@ -46,24 +47,31 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
         public void onServiceConnected(ComponentName name, IBinder service) {
             System.out.println("绑定成功");
             startService(in);
-            mService = ((MyService.MyBinder)service).getService();
+            mService = ((MyService.MyBinder) service).getService();
             mService.setOnJSONObjectListener(new OnJSONObjectListener() {
 
                 @Override
                 public void onConnect(String message) {
+                    Log.d("message", message);
                     if (message.equals("Connected")) {
                         appInit();
                     }
                 }
 
                 @Override
-                public void onPushBroadcast(JSONObject Json) {
+                public void onPushBroadcast(JSONObject json) {
 
                 }
 
                 @Override
-                public void onJSONObject(JSONObject Json) {
-                    parseLoginRespond(Json);
+                public void onJSONObject(JSONObject json) {
+                    try {
+                        if (json.getInt("msg") == 150) {
+                            parseLoginRespond(json);
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 }
             });
         }
@@ -73,6 +81,7 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
 
         }
     };
+    private String aver;
 
 
     @Override
@@ -83,6 +92,8 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
         name = Build.MANUFACTURER;             //生产厂家   name
         version = Build.VERSION.RELEASE;       //固件版本   version  sver
         model = Build.MODEL;                   //机型
+        GetAppVersion getAppVersion = new GetAppVersion(LoginActivity.this);
+        aver = getAppVersion.getVersion();
         getPosition();
         TelephonyManager tm = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
         String DEVICE_ID = tm.getDeviceId();
@@ -94,14 +105,15 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
         sb.insert(16, "-");
         sb.insert(21, "-");
         duid = sb.toString();                  //唯一区分设备ID
-        in = new Intent(LoginActivity.this,MyService.class);
+        Log.d("duid", duid);
+        in = new Intent(LoginActivity.this, MyService.class);
         in.putExtra("duid", duid);
         bindService(in, coon, Context.BIND_AUTO_CREATE);
         initView();
     }
 
 
-    private void initView() {   
+    private void initView() {
         btnLogin = (Button) findViewById(R.id.bt_login);
         etUsename = (EditText) findViewById(R.id.et_username);
         etPassword = (EditText) findViewById(R.id.et_password);
@@ -115,7 +127,7 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
             case R.id.bt_login:
                 String usename = etUsename.getText().toString().trim();
                 String password = etPassword.getText().toString().trim();
-                sendLoginRequest(usename,password);
+                sendLoginRequest(usename, password);
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
@@ -144,10 +156,15 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
 
             JSONObject jsonBody = new JSONObject();
             jsonBody.put("duid", duid);
+            Log.d("duid", duid);
             jsonBody.put("name", name);
+            Log.d("name", name);
             jsonBody.put("model", model);
+            Log.d("model", model);
             jsonBody.put("sver", version);
-            jsonBody.put("aver", GetAppVersion.getVersion());
+            Log.d("sver", version);
+            jsonBody.put("aver", aver);
+            Log.d("aver", aver);
             jsonBody.put("type", "2");
             jsonBody.put("ts", currentTime);
             jsonBody.put("geo", jsonGeo);
@@ -158,58 +175,65 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
 
             MyService.mConnection.sendTextMessage(jsonReq.toString());
 
-            System.out.println("init request:" + jsonReq.toString());
+            System.out.println("Init request:" + jsonReq.toString());
 
         } catch (Exception e) {
-
+            System.out.println(e.getMessage());
         }
     }
 
     /**
      * 发送登录请求
      */
-    private void sendLoginRequest(String name,String pwd) {
+    private void sendLoginRequest(String name, String pwd) {
         try {
             JSONObject jsonObject = new JSONObject();
             JSONObject jsonGeo = new JSONObject();
-            jsonGeo.put("lng","116.340071");
-            jsonGeo.put("lat","40.066179");
+            jsonGeo.put("lng", "116.340071");
+            jsonGeo.put("lat", "40.066179");
 
             JSONObject jsonBody = new JSONObject();
-            jsonBody.put("upn",name);
-            jsonBody.put("pwd",pwd);
-            jsonBody.put("ts",currentTime);
-            jsonBody.put("geo",jsonGeo);
+            jsonBody.put("upn", name);
+            jsonBody.put("pwd", pwd);
+            jsonBody.put("ts", currentTime);
+            jsonBody.put("geo", jsonGeo);
 
-            jsonObject.put("msg",150);
-            jsonObject.put("body",jsonBody);
+            jsonObject.put("msg", 150);
+            jsonObject.put("body", jsonBody);
 
             MyService.mConnection.sendTextMessage(jsonObject.toString());
 
-            System.out.println("login request:" + jsonObject.toString());
+            System.out.println("Login request:" + jsonObject.toString());
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
+    /**
+     * 解析登录返回的json数据
+     *
+     * @param json 服务器返回的json串
+     */
+
     private void parseLoginRespond(JSONObject json) {
         try {
-
+            long token = json.getLong("token");
             JSONObject body = json.getJSONObject("body");
-            Log.d("解析后的body数据",body+"");
+            Log.d("解析后的body数据", body + "");
             String name = body.getString("name");
-            Log.d("解析后的name数据",name);
+            Log.d("解析后的name数据", name);
             String auid = body.getString("auid");
-            Log.d("auid",auid);
+            Log.d("auid", auid);
             int ast = body.getInt("ast");
-            Log.d("解析后的ast数据",ast+"");
+            Log.d("解析后的ast数据", ast + "");
             String fub = body.getString("fub");
-            Log.d("解析后的fub数据",fub);
+            Log.d("解析后的fub数据", fub);
             String ts = body.getString("ts");
-            Log.d("解析后的tm数据",ts);
+            Log.d("解析后的tm数据", ts);
             SharedPrefsUtil.putValue(mContext, "fub", fub);
-            SharedPrefsUtil.putValue(mContext,"auid",auid);
-        }catch (Exception e) {
+            SharedPrefsUtil.putValue(mContext, "auid", auid);
+
+        } catch (Exception e) {
         }
     }
 

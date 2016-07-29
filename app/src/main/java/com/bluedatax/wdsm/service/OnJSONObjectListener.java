@@ -7,6 +7,6 @@ import org.json.JSONObject;
  */
 public interface OnJSONObjectListener {
     void onConnect(String message);
-    void onPushBroadcast(JSONObject Json);
-    void onJSONObject(JSONObject Json);
+    void onPushBroadcast(JSONObject json);
+    void onJSONObject(JSONObject json);
 }

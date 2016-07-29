@@ -60,7 +60,7 @@ public class MyService extends Service {
                         System.out.println( "---------------" + jsonObject.getInt("msg"));
                         if (onJSONObjectListener != null && jsonObject.getInt("msg") == 10) {         //初始化
                             onJSONObjectListener.onJSONObject(jsonObject);
-                        } else if (jsonObject.getInt("action") == 62) {                               //登录
+                        } else if (jsonObject.getInt("msg") == 150) {                                 //登录
                             onJSONObjectListener.onJSONObject(jsonObject);
                         } else if (onJSONObjectListener != null && jsonObject.getInt("action") == 61) {  //注册
                             onJSONObjectListener.onJSONObject(jsonObject);
