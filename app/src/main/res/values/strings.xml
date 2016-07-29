@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">WDSM</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_login">LoginActivity</string>
+
+    <string name="login_text_welcome">w65管理欢迎您</string>
+    <string name="login_text_phone">手机号码</string>
+    <string name="login_text_password">登录密码</string>
+    <string name="login_text_login">登录</string>
+    <string name="login_text_register">注册</string>
+    <string name="login_text_temporarypassword">临时密码</string>
+    <string name="login_text_forgetpassword">忘记密码</string>
+
+    <string name="main_text_manager_radiobutton">设备管理</string>
+    <string name="main_text_deal_radiobutton">事故处理</string>
+    <string name="main_text_community_radiobutton">智慧社区</string>
+    <string name="main_text_mine_radiobutton">我的</string>
+    <string name="title_activity_manage_fragment">ManageFragment</string>
+    <string name="title_activity_deal_fragment">DealFragment</string>
+    <string name="title_activity_community_fragment">CommunityFragment</string>
+    <string name="title_activity_mine_fragment">MineFragment</string>
+    <string name="title_activity_broadcast_fragment">BroadcastFragment</string>
+    <string name="title_activity_community_broadcast">CommunityBroadcast</string>
+    <string name="title_activity_send_broadcast">SendBroadcast</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_statistics_fragment">StatisticsFragment</string>
+    <string name="title_activity_map_fragment">MapFragment</string>
+
+</resources>

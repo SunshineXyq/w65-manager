@@ -1,0 +1,71 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <FrameLayout
+        android:id="@+id/fragment_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    </FrameLayout>
+
+
+    <View style="@style/horizontal_line" />
+
+    <RadioGroup
+        android:id="@+id/radiogroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbt_manage"
+            style="@style/radiobutton_main"
+            android:button="@null"
+            android:drawablePadding="3dp"
+            android:padding="3dp"
+            android:text="@string/main_text_manager_radiobutton"
+            android:drawableTop="@mipmap/device_magage_normal"
+            android:textSize="14sp" />
+
+        <RadioButton
+            android:id="@+id/rbt_deal"
+            style="@style/radiobutton_main"
+            android:drawablePadding="3dp"
+            android:padding="3dp"
+            android:text="@string/main_text_deal_radiobutton"
+            android:drawableTop="@mipmap/deal_normal"
+            android:textSize="14sp" />
+
+        <RadioButton
+            android:id="@+id/rbt_community"
+            style="@style/radiobutton_main"
+            android:drawablePadding="3dp"
+            android:padding="3dp"
+            android:text="@string/main_text_community_radiobutton"
+            android:drawableTop="@mipmap/community_normal"
+            android:textSize="14sp" />
+
+
+        <RadioButton
+            android:id="@+id/rbt_mine"
+            style="@style/radiobutton_main"
+            android:drawablePadding="3dp"
+            android:padding="3dp"
+            android:text="@string/main_text_mine_radiobutton"
+            android:drawableTop="@mipmap/mine_normal"
+            android:textSize="14sp" />
+
+
+    </RadioGroup>
+
+</LinearLayout>
+
+
+
+
