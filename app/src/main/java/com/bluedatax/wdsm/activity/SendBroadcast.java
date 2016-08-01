@@ -125,6 +125,7 @@ public class SendBroadcast extends ActionBarActivity implements View.OnTouchList
         sendVoice.setOnTouchListener(this);
         fub = SharedPrefsUtil.getValue(this, "fub", "");
         auid = SharedPrefsUtil.getValue(this, "auid", "");
+        System.out.println("取出的fub auid" + fub + auid);
         Intent in = new Intent(SendBroadcast.this,MyService.class);
         bindService(in,conn, Context.BIND_AUTO_CREATE);
         mDatas = new ArrayList<SendBroadcastData>();

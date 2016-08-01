@@ -86,6 +86,27 @@
         <item name="android:gravity">center</item>
     </style>
 
+    <!--社区信息-->
+
+    <style name="listview_community_item">
+
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">18sp</item>
+
+    </style>
+
+    <style name="device_details_text">
+
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_marginLeft">50dp</item>
+
+    </style>
 
 
 

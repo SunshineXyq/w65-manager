@@ -56,8 +56,7 @@ public class BroadcastAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
         System.out.println(data.getTime() + "----------" + data.getStartTime());
-        holder.textViewTime.setText(data.getTime() + "");
-        holder.textViewStartTime.setText(data.getStartTime() + "");
+        holder.textViewTime.setText(data.getStartTime() + "" + "  " +data.getTime() + "" + "s");
 
         return convertView;
     }

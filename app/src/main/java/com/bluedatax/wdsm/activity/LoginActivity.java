@@ -1,5 +1,6 @@
 package com.bluedatax.wdsm.activity;
 
+import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -39,7 +40,8 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
     private String version;
     private String duid;
     private String model;
-    private Context mContext;
+
+    private Activity mContext = this;
 
 
     ServiceConnection coon = new ServiceConnection() {
@@ -82,6 +84,9 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
         }
     };
     private String aver;
+    private long token;
+    private String fub;
+    private String auid;
 
 
     @Override
@@ -108,7 +113,7 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
         Log.d("duid", duid);
         in = new Intent(LoginActivity.this, MyService.class);
         in.putExtra("duid", duid);
-        bindService(in, coon, Context.BIND_AUTO_CREATE);
+//        bindService(in, coon, Context.BIND_AUTO_CREATE);
         initView();
     }
 
@@ -127,7 +132,7 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
             case R.id.bt_login:
                 String usename = etUsename.getText().toString().trim();
                 String password = etPassword.getText().toString().trim();
-                sendLoginRequest(usename, password);
+//                sendLoginRequest(usename, password);
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
@@ -217,24 +222,26 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
 
     private void parseLoginRespond(JSONObject json) {
         try {
-            long token = json.getLong("token");
+            token = json.getLong("token");
+            Log.d("解析后的token数据", token + "");
             JSONObject body = json.getJSONObject("body");
             Log.d("解析后的body数据", body + "");
             String name = body.getString("name");
             Log.d("解析后的name数据", name);
-            String auid = body.getString("auid");
+            auid = body.getString("auid");
             Log.d("auid", auid);
             int ast = body.getInt("ast");
             Log.d("解析后的ast数据", ast + "");
-            String fub = body.getString("fub");
+            fub = body.getString("fub");
             Log.d("解析后的fub数据", fub);
             String ts = body.getString("ts");
             Log.d("解析后的tm数据", ts);
-            SharedPrefsUtil.putValue(mContext, "fub", fub);
-            SharedPrefsUtil.putValue(mContext, "auid", auid);
 
         } catch (Exception e) {
         }
+        SharedPrefsUtil.putValue(LoginActivity.this, "fub", fub);
+        SharedPrefsUtil.putValue(mContext, "auid", auid);
+        SharedPrefsUtil.putLong(mContext, "token", token);
     }
 
 
@@ -245,7 +252,7 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        unbindService(coon);
+//        unbindService(coon);
     }
 
     @Override

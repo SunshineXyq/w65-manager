@@ -5,29 +5,68 @@
     android:orientation="vertical"
     >
 
-    <LinearLayout
+    <RelativeLayout android:id="@+id/rlSearchFrameDelete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:orientation="horizontal">
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:layout_centerVertical="true"
+        android:padding="5dp"
+        android:gravity="center_vertical"
+        >
 
-
-        <TextView
+        <ImageView
+            android:id="@+id/iv_search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="海淀区:八宝庄小区(5/25)"
-            android:layout_gravity="center_vertical"
-            android:textSize="15sp"
-            />
+            android:src="@mipmap/search"/>
 
-        <Button
-            android:id="@+id/sendBroadcast"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_marginLeft="15dp"
-            android:layout_gravity="center_vertical"
-            android:text="发送广播"/>
+        <EditText
+            android:id="@+id/etSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/iv_search"
+            android:singleLine="true"
+            android:layout_marginRight="10dp"
+            android:paddingLeft="32dp"
+            android:textSize="12sp"
+            android:hint="请输入文字..."/>
 
-    </LinearLayout>
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/lv_community"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@null"
+        android:background="@color/light_gary"
+        >
+    </ListView>
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:padding="10dp"-->
+        <!--android:orientation="horizontal">-->
+
+
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="海淀区:八宝庄小区(5/25)"-->
+            <!--android:layout_gravity="center_vertical"-->
+            <!--android:textSize="15sp"-->
+            <!--/>-->
+
+        <!--<Button-->
+            <!--android:id="@+id/sendBroadcast"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="40dp"-->
+            <!--android:layout_marginLeft="15dp"-->
+            <!--android:layout_gravity="center_vertical"-->
+            <!--android:text="发送广播"/>-->
+
+    <!--</LinearLayout>-->
 
 </LinearLayout>

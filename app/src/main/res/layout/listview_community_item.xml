@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="30dp"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/horizontal_line" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+        <ImageView
+            android:id="@+id/circle_orange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:src="@mipmap/circle_orange"
+            />
+
+        <TextView
+            android:id="@+id/tv_community"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/circle_orange"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:text="中关村双榆树小区(5/25)   3"
+            />
+
+
+        <ImageView
+            android:id="@+id/item_send_broadcast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/arrow_into"
+            android:layout_marginRight="20dp"
+            android:src="@mipmap/telephone"
+            />
+
+        <ImageView
+            android:id="@+id/arrow_into"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/arrow_into"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            />
+
+        </RelativeLayout>
+
+    <TextView
+        style="@style/horizontal_line"
+        android:layout_marginLeft="35dp"
+        />
+
+    <LinearLayout
+        android:id="@+id/personal_information_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/circle_orange"
+            />
+
+        <TextView
+            style="@style/listview_community_item"
+            android:text="李斯"
+             />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_gravity="center_vertical"
+            android:text="65"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:src="@mipmap/chat"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:src="@mipmap/phone"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:src="@mipmap/video"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="25dp"
+            android:text="3"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="26dp"
+            android:src="@mipmap/arrow_into_light"
+            />
+
+        </LinearLayout>
+
+
+    <TextView
+        style="@style/horizontal_line"
+        android:layout_marginLeft="35dp"/>
+
+    <RelativeLayout
+        android:id="@+id/personal_information_two"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="10dp"
+        >
+
+        <ImageView
+            android:id="@+id/circle_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/circle_green"
+            />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/circle_green"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:text="陈加"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/name"
+            android:layout_centerVertical="true"
+            android:text="60"/>
+
+        <ImageView
+            android:id="@+id/arrow_into_light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/arrow_into_light"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="6dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="25dp"
+            android:layout_toLeftOf="@+id/arrow_into_light"
+            android:text="0"
+            />
+
+        </RelativeLayout>
+
+    <TextView
+        style="@style/horizontal_line"
+        android:layout_marginLeft="35dp"/>
+
+
+</LinearLayout>

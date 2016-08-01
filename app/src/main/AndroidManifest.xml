@@ -23,7 +23,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-             >
+            android:theme="@style/ActionBarNoTitle" >
         </activity>
         <activity
             android:name=".activity.CommunityBroadcast"
@@ -36,7 +36,10 @@
 
         <service android:name=".service.MyService" />
 
-
+        <activity
+            android:name=".activity.DeviceDetails"
+            android:label="@string/title_activity_device_details" >
+        </activity>
     </application>
 
 </manifest>

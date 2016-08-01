@@ -137,7 +137,6 @@
         <TextView
             android:id="@+id/tv_forget_psw"
             style="@style/login_service"
-            android:textSize="15sp"
             android:layout_toRightOf="@+id/tv_temporary_psw"
             android:layout_marginLeft="50dp"
             android:text="@string/login_text_forgetpassword" />
