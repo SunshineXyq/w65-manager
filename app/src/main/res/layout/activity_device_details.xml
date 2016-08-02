@@ -12,8 +12,10 @@
         >
 
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:id="@+id/iv_return"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
             android:src="@mipmap/arrow_return"
             android:layout_marginLeft="10dp"
             />
@@ -43,221 +45,284 @@
         android:layout_marginLeft="20dp"
         />
 
-    <LinearLayout
-        android:id="@+id/personal_information_one"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:padding="10dp"
-        android:orientation="horizontal"
-        >
+        android:layout_height="wrap_content">
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-        <TextView
-            style="@style/listview_community_item"
-            android:text="设备ID"
-            />
 
-        <TextView
-            style="@style/device_details_text"
-            android:text="000-2340-1234-0001"
-            />
+        <LinearLayout
+            android:id="@+id/personal_information_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                style="@style/device_details_name_text"
+                android:text="设备ID"
+                />
+
+            <TextView
+                style="@style/device_details_text"
+                android:text="000-2340-1234-0001"
+                />
 
         </LinearLayout>
 
-    <TextView
-       style="@style/horizontal_line"
-        android:layout_marginLeft="20dp"/>
+        <TextView
+            style="@style/horizontal_line"
+            android:layout_marginLeft="20dp"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:padding="10dp"
-        android:orientation="horizontal"
-        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                style="@style/device_details_name_text"
+                android:text="设备类型"
+                />
+
+            <TextView
+                style="@style/device_details_text"
+                android:text="智能手表"
+                />
+
+        </LinearLayout>
 
         <TextView
-            style="@style/listview_community_item"
-            android:text="设备类型"
-            />
+            style="@style/horizontal_line"
+            android:layout_marginLeft="20dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                style="@style/device_details_name_text"
+                android:text="设备MAC"
+                />
+
+            <TextView
+                style="@style/device_details_text"
+                android:text="4A:00:00:CB:B6:91"
+                />
+
+        </LinearLayout>
 
         <TextView
-            style="@style/device_details_text"
-            android:text="智能手表"
-            />
+            style="@style/horizontal_line"
+            android:layout_marginLeft="20dp"/>
 
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            >
 
-    <TextView
-        style="@style/horizontal_line"
-        android:layout_marginLeft="20dp"/>
+            <TextView
+                style="@style/device_details_name_text"
+                android:text="设备IP"
+                />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:padding="10dp"
-        android:orientation="horizontal"
-        >
+            <TextView
+                style="@style/device_details_text"
+                android:text="FEDC:BA98:7654:4210:FEDC"
+                />
 
-        <TextView
-            style="@style/listview_community_item"
-            android:text="设备MAC"
-            />
-
-        <TextView
-            style="@style/device_details_text"
-            android:text="智能手表"
-            />
-
-    </LinearLayout>
-
-    <TextView
-        style="@style/horizontal_line"
-        android:layout_marginLeft="20dp"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:padding="10dp"
-        android:orientation="horizontal"
-        >
+        </LinearLayout>
 
         <TextView
-            style="@style/listview_community_item"
-            android:text="设备IP"
-            />
+            style="@style/horizontal_line"
+            android:layout_marginLeft="20dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                style="@style/device_details_name_text"
+                android:text="设备名称"
+                />
+
+            <TextView
+                style="@style/device_details_text"
+                android:text="父亲"
+                />
+
+        </LinearLayout>
 
         <TextView
-            style="@style/device_details_text"
-            android:text="智能手表"
-            />
+            style="@style/horizontal_line"
+            android:layout_marginLeft="20dp"/>
 
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            >
 
-    <TextView
-        style="@style/horizontal_line"
-        android:layout_marginLeft="20dp"/>
+            <TextView
+                style="@style/device_details_name_text"
+                android:text="位置"
+                />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:padding="10dp"
-        android:orientation="horizontal"
-        >
+            <TextView
+                style="@style/device_details_text"
+                android:text="中关村双榆树知春里社区"
+                />
 
-        <TextView
-            style="@style/listview_community_item"
-            android:text="设备名称"
-            />
-
-        <TextView
-            style="@style/device_details_text"
-            android:text="智能手表"
-            />
-
-    </LinearLayout>
-
-    <TextView
-        style="@style/horizontal_line"
-        android:layout_marginLeft="20dp"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:padding="10dp"
-        android:orientation="horizontal"
-        >
+        </LinearLayout>
 
         <TextView
-            style="@style/listview_community_item"
-            android:text="位置"
-            />
+            style="@style/horizontal_line"
+            android:layout_marginLeft="20dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                style="@style/device_details_name_text"
+                android:text="是否欠费"
+                />
+
+            <TextView
+                style="@style/device_details_text"
+                android:text="否"
+                />
+
+        </LinearLayout>
 
         <TextView
-            style="@style/device_details_text"
-            android:text="智能手表"
-            />
+            style="@style/horizontal_line"
+            android:layout_marginLeft="20dp"/>
 
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            >
 
-    <TextView
-        style="@style/horizontal_line"
-        android:layout_marginLeft="20dp"/>
+            <TextView
+                style="@style/device_details_name_text"
+                android:text="距离"
+                />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:padding="10dp"
-        android:orientation="horizontal"
-        >
+            <TextView
+                style="@style/device_details_text"
+                android:text="约5米"
+                />
 
-        <TextView
-            style="@style/listview_community_item"
-            android:text="是否欠费"
-            />
 
-        <TextView
-            style="@style/device_details_text"
-            android:text="智能手表"
-            />
 
-    </LinearLayout>
-
-    <TextView
-        style="@style/horizontal_line"
-        android:layout_marginLeft="20dp"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:padding="10dp"
-        android:orientation="horizontal"
-        >
+        </LinearLayout>
 
         <TextView
-            style="@style/listview_community_item"
-            android:text="距离"
-            />
+            style="@style/horizontal_line"
+            android:layout_marginLeft="20dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                style="@style/device_details_name_text"
+                android:text="电量"
+                />
+
+            <TextView
+                style="@style/device_details_text"
+                android:text="30%"
+                />
+
+        </LinearLayout>
 
         <TextView
-            style="@style/device_details_text"
-            android:text="智能手表"
-            />
+            style="@style/horizontal_line"
+            android:layout_marginLeft="20dp"/>
 
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="10dp"
+                android:orientation="horizontal"
+                >
 
-    <TextView
-        style="@style/horizontal_line"
-        android:layout_marginLeft="20dp"/>
+                <TextView
+                    style="@style/device_details_name_text"
+                    android:text="佩戴状态"
+                    />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:padding="10dp"
-        android:orientation="horizontal"
-        >
+                <TextView
+                    style="@style/device_details_text"
+                    android:text="正常"
+                    />
 
-        <TextView
-            style="@style/listview_community_item"
-            android:text="电量"
-            />
+            </LinearLayout>
 
-        <TextView
-            style="@style/device_details_text"
-            android:text="智能手表"
-            />
+            <TextView
+                style="@style/horizontal_line"
+                android:layout_marginLeft="20dp"/>
 
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="10dp"
+                android:orientation="horizontal"
+                >
 
-    <TextView
-        style="@style/horizontal_line"
-        android:layout_marginLeft="20dp"/>
+                <TextView
+                    style="@style/listview_community_item"
+                    android:text="用户授权"
+                    />
+
+
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/horizontal_line"
+                android:layout_marginLeft="20dp"/>
+
+        </LinearLayout>
+
+        </ScrollView>
+
+
 
 </LinearLayout>

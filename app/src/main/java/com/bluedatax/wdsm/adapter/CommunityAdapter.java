@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.bluedatax.wdsm.R;
+import com.bluedatax.wdsm.activity.DeviceDetails;
 import com.bluedatax.wdsm.activity.SendBroadcast;
 
 import java.util.List;
@@ -59,6 +60,20 @@ public class CommunityAdapter extends BaseAdapter{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, SendBroadcast.class);
+                context.startActivity(intent);
+            }
+        });
+        holder.personalInfoOne.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context,DeviceDetails.class);
+                context.startActivity(intent);
+            }
+        });
+        holder.personalInfoTwo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context,DeviceDetails.class);
                 context.startActivity(intent);
             }
         });

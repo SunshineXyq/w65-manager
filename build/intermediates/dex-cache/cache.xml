@@ -2,25 +2,18 @@
 <items version="2" >
 
     <item
-        jar="/Users/bdx109/BdxProj/myGithub/w65-manager/app/libs/autobahn.jar"
+        jar="/Users/bdx109/BdxProj/myGithub/w65-manager/app/libs/AMap_3DMap_V3.3.3_20160726.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="f0aa5c9214e17c4fbc87b22314cd68c518cb58d0">
-        <dex dex="/Users/bdx109/BdxProj/myGithub/w65-manager/app/build/intermediates/pre-dexed/debug/autobahn-7edd44e9e550a4c9cfa8e825fe5d93b7c8cd7cd7.jar" />
+        sha1="abe306661c6151ff0b7bc04844275ff286a256b5">
+        <dex dex="/Users/bdx109/BdxProj/myGithub/w65-manager/app/build/intermediates/pre-dexed/debug/AMap_3DMap_V3.3.3_20160726-296b7f0452b413af8cbfc20840d90968ab78843f.jar" />
     </item>
     <item
-        jar="/Users/bdx109/BdxProj/W65/WDSM/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jar="/Users/bdx109/BdxProj/myGithub/w65-manager/app/libs/Volley.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
-        <dex dex="/Users/bdx109/BdxProj/W65/WDSM/app/build/intermediates/pre-dexed/debug/classes-1472e57a947df866efac0f44185f41059a11d25e.jar" />
-    </item>
-    <item
-        jar="/Users/bdx109/BdxProj/W65/WDSM/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex dex="/Users/bdx109/BdxProj/W65/WDSM/app/build/intermediates/pre-dexed/debug/classes-e3b1d498795c246a9335d60ff70e18a8f07687ea.jar" />
+        sha1="77faa9ffd189160d1e22c58fdf5eed0a9a08b816">
+        <dex dex="/Users/bdx109/BdxProj/myGithub/w65-manager/app/build/intermediates/pre-dexed/debug/Volley-89ea3b7761996aec764b63f4c0aa9a69f3ae7ee3.jar" />
     </item>
     <item
         jar="/Users/Tools/Android-SDK/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
@@ -28,20 +21,6 @@
         revision="21.1.2"
         sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
         <dex dex="/Users/bdx109/BdxProj/W65/WDSM/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-05d52a6151a16ce9eef30ede0140e4ea38914cad.jar" />
-    </item>
-    <item
-        jar="/Users/bdx109/BdxProj/myGithub/w65-manager/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex dex="/Users/bdx109/BdxProj/myGithub/w65-manager/app/build/intermediates/pre-dexed/debug/classes-885ee08a79ea424355f7f84eae6ffd4e6d2e1de7.jar" />
-    </item>
-    <item
-        jar="/Users/bdx109/BdxProj/W65/WDSM/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
-        <dex dex="/Users/bdx109/BdxProj/W65/WDSM/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-cedba391715a70dc7daf22614f58695475e973bc.jar" />
     </item>
     <item
         jar="/Users/bdx109/BdxProj/myGithub/w65-manager/app/build/intermediates/exploded-aar/fr.avianey.com.viewpagerindicator/library/2.4.1.1/classes.jar"
@@ -65,18 +44,74 @@
         <dex dex="/Users/bdx109/BdxProj/myGithub/w65-manager/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-454f6bd56303e8de97914ba4e29e6ef6a2589057.jar" />
     </item>
     <item
-        jar="/Users/bdx109/BdxProj/W65/WDSM/app/libs/autobahn.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="f0aa5c9214e17c4fbc87b22314cd68c518cb58d0">
-        <dex dex="/Users/bdx109/BdxProj/W65/WDSM/app/build/intermediates/pre-dexed/debug/autobahn-20f33f19be979311bb7a094ee50133956a58d0e3.jar" />
-    </item>
-    <item
         jar="/Users/bdx109/BdxProj/myGithub/w65-manager/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
         <dex dex="/Users/bdx109/BdxProj/myGithub/w65-manager/app/build/intermediates/pre-dexed/debug/classes-e494ec47d81f880cf2a3f67fb98d5d1cd302b7f7.jar" />
+    </item>
+    <item
+        jar="/Users/bdx109/BdxProj/myGithub/w65-manager/app/libs/AMap_Location_V2.4.1_20160414.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="c2a48661c11bfafb2dea576904958420c2ad9e06">
+        <dex dex="/Users/bdx109/BdxProj/myGithub/w65-manager/app/build/intermediates/pre-dexed/debug/AMap_Location_V2.4.1_20160414-0d71e6cd35c2b6cf57acb4931c59c6d086e9f48a.jar" />
+    </item>
+    <item
+        jar="/Users/bdx109/BdxProj/myGithub/w65-manager/app/libs/autobahn.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="f0aa5c9214e17c4fbc87b22314cd68c518cb58d0">
+        <dex dex="/Users/bdx109/BdxProj/myGithub/w65-manager/app/build/intermediates/pre-dexed/debug/autobahn-7edd44e9e550a4c9cfa8e825fe5d93b7c8cd7cd7.jar" />
+    </item>
+    <item
+        jar="/Users/bdx109/BdxProj/W65/WDSM/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="/Users/bdx109/BdxProj/W65/WDSM/app/build/intermediates/pre-dexed/debug/classes-1472e57a947df866efac0f44185f41059a11d25e.jar" />
+    </item>
+    <item
+        jar="/Users/bdx109/BdxProj/W65/WDSM/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/Users/bdx109/BdxProj/W65/WDSM/app/build/intermediates/pre-dexed/debug/classes-e3b1d498795c246a9335d60ff70e18a8f07687ea.jar" />
+    </item>
+    <item
+        jar="/Users/bdx109/BdxProj/myGithub/w65-manager/app/libs/AMap_Search_V3.3.0_20160616.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="c48cb8f3e8bde93009a28c13b0f7b984b3039d3b">
+        <dex dex="/Users/bdx109/BdxProj/myGithub/w65-manager/app/build/intermediates/pre-dexed/debug/AMap_Search_V3.3.0_20160616-c9be4734b9dba24a3d02e184f053a952371316a0.jar" />
+    </item>
+    <item
+        jar="/Users/bdx109/BdxProj/myGithub/w65-manager/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/Users/bdx109/BdxProj/myGithub/w65-manager/app/build/intermediates/pre-dexed/debug/classes-885ee08a79ea424355f7f84eae6ffd4e6d2e1de7.jar" />
+    </item>
+    <item
+        jar="/Users/bdx109/BdxProj/myGithub/w65-manager/app/libs/AMap_2DMap_V2.9.0_20160525.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="46212fcb15e2fcfcef796ab9f7af3fd1364f98f4">
+        <dex dex="/Users/bdx109/BdxProj/myGithub/w65-manager/app/build/intermediates/pre-dexed/debug/AMap_2DMap_V2.9.0_20160525-6314798ec6f2015b7cf8be7dd3ce02f4ab6c8a6a.jar" />
+    </item>
+    <item
+        jar="/Users/bdx109/BdxProj/W65/WDSM/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="/Users/bdx109/BdxProj/W65/WDSM/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-cedba391715a70dc7daf22614f58695475e973bc.jar" />
+    </item>
+    <item
+        jar="/Users/bdx109/BdxProj/W65/WDSM/app/libs/autobahn.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="f0aa5c9214e17c4fbc87b22314cd68c518cb58d0">
+        <dex dex="/Users/bdx109/BdxProj/W65/WDSM/app/build/intermediates/pre-dexed/debug/autobahn-20f33f19be979311bb7a094ee50133956a58d0e3.jar" />
     </item>
 
 </items>
