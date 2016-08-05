@@ -10,7 +10,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClient;
@@ -32,10 +34,18 @@ public class MapFragment extends Fragment implements LocationSource,AMapLocation
     private OnLocationChangedListener mListener;
     private AMapLocationClient mLocationClient;
     private AMapLocationClientOption mLocationOption;
+    private TextView errInfo;
+    private RadioButton gpsFollow;
+    private RadioButton gpsLocate;
+    private RadioButton gpsRotate;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_map_fragment,null);
+        errInfo = (TextView) view.findViewById(R.id.location_errInfo);
+        gpsLocate = (RadioButton) view.findViewById(R.id.gps_locate);
+        gpsFollow = (RadioButton) view.findViewById(R.id.gps_follow);
+        gpsRotate = (RadioButton) view.findViewById(R.id.gps_rotate);
         mMapView = (MapView) view.findViewById(R.id.map);
         mMapView.onCreate(savedInstanceState);
         init();
@@ -50,21 +60,24 @@ public class MapFragment extends Fragment implements LocationSource,AMapLocation
             aMap = mMapView.getMap();
             setUpMap();
         }
+
     }
 
     /**
-     * 设置amap的属性
+     * 设置amap的属性,自定义定位图标，
+     * 设置定位监听
      */
     private void setUpMap() {
         MyLocationStyle myLocationStyle = new MyLocationStyle();
         myLocationStyle.myLocationIcon(BitmapDescriptorFactory.fromResource(R.mipmap.location_marker));
-        myLocationStyle.strokeColor(R.color.black);      //设置圆形的边框颜色
-        myLocationStyle.strokeWidth(1.0f);               //设置圆形边框的粗细
+        myLocationStyle.strokeColor(R.color.black);        //设置圆形的边框颜色
+        myLocationStyle.strokeWidth(1.0f);                 //设置圆形边框的粗细
         myLocationStyle.radiusFillColor(Color.argb(100,0,0,180));   //设置圆形的填充颜色
         aMap.setMyLocationStyle(myLocationStyle);
-        aMap.setLocationSource(this);                    //设置定位监听
-        aMap.getUiSettings().setIndoorSwitchEnabled(true); //设置默认定位按钮是否显示
-        aMap.setMyLocationEnabled(true);
+        aMap.setLocationSource(this);                              //设置定位监听
+        aMap.getUiSettings().setMyLocationButtonEnabled(true);     //设置默认定位按钮是否显示
+        aMap.setMyLocationEnabled(true);                           //显示定位层并可触发定位
+        aMap.setMyLocationType(AMap.LOCATION_TYPE_LOCATE);         //设置定位类型的定位模式
 
 
     }
@@ -79,12 +92,16 @@ public class MapFragment extends Fragment implements LocationSource,AMapLocation
     public void onPause() {
         super.onPause();
         mMapView.onPause();
+        deactivate();
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
         mMapView.onDestroy();
+        if (mLocationClient != null) {
+            mLocationClient.onDestroy();
+        }
     }
 
     @Override
@@ -101,11 +118,14 @@ public class MapFragment extends Fragment implements LocationSource,AMapLocation
     @Override
     public void activate(OnLocationChangedListener onLocationChangedListener) {
         mListener = onLocationChangedListener;
-        if (mListener == null) {
+        if (mLocationClient == null) {
             mLocationClient = new AMapLocationClient(getActivity());
             mLocationOption = new AMapLocationClientOption();
-            mLocationClient.setLocationListener(this);
+            //设置定位监听
+            mLocationClient.setLocationListener(this);        //设置定位监听
+            //设置为高精度定位模式
             mLocationOption.setLocationMode(AMapLocationClientOption.AMapLocationMode.Hight_Accuracy);
+            //设置定位参数
             mLocationClient.setLocationOption(mLocationOption);
             mLocationClient.startLocation();
         }
@@ -117,6 +137,12 @@ public class MapFragment extends Fragment implements LocationSource,AMapLocation
      */
     @Override
     public void deactivate() {
+        mListener = null;
+        if (mLocationClient != null) {
+            mLocationClient.stopLocation();
+            mLocationClient.onDestroy();
+        }
+        mLocationClient = null;
 
     }
 
@@ -127,11 +153,31 @@ public class MapFragment extends Fragment implements LocationSource,AMapLocation
 
     @Override
     public void onLocationChanged(AMapLocation aMapLocation) {
+        if (mListener != null && aMapLocation != null) {
+            if (aMapLocation != null && aMapLocation.getErrorCode() == 0) {
+                errInfo.setVisibility(View.GONE);
+                mListener.onLocationChanged(aMapLocation);
+            } else {
+                String errText = "定位失败," + aMapLocation.getErrorCode()+":"+aMapLocation.getErrorInfo();
+                errInfo.setVisibility(View.VISIBLE);
+                errInfo.setText(errText);
+            }
+        }
 
     }
 
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
-
+        switch (checkedId) {
+            case R.id.gps_locate:
+                aMap.setMyLocationType(AMap.LOCATION_TYPE_LOCATE);
+                break;
+            case R.id.gps_follow:
+                aMap.setMyLocationType(AMap.LOCATION_TYPE_MAP_FOLLOW);
+                break;
+            case R.id.gps_rotate:
+                aMap.setMyLocationType(AMap.LOCATION_TYPE_MAP_ROTATE);
+                break;
+        }
     }
 }
