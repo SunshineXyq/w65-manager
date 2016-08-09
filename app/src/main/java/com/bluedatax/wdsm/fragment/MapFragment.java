@@ -72,13 +72,14 @@ public class MapFragment extends Fragment implements LocationSource,AMapLocation
         myLocationStyle.myLocationIcon(BitmapDescriptorFactory.fromResource(R.mipmap.location_marker));
         myLocationStyle.strokeColor(R.color.black);        //设置圆形的边框颜色
         myLocationStyle.strokeWidth(1.0f);                 //设置圆形边框的粗细
-        myLocationStyle.radiusFillColor(Color.argb(100,0,0,180));   //设置圆形的填充颜色
+        myLocationStyle.radiusFillColor(Color.argb(100,0,0,180));  //设置圆形的填充颜色
         aMap.setMyLocationStyle(myLocationStyle);
         aMap.setLocationSource(this);                              //设置定位监听
         aMap.getUiSettings().setMyLocationButtonEnabled(true);     //设置默认定位按钮是否显示
+        aMap.getUiSettings().setCompassEnabled(true);              //提供指南针功能，始终指向正北方向
+        aMap.getUiSettings().setScaleControlsEnabled(true);        //设置地图的默认显示尺寸
         aMap.setMyLocationEnabled(true);                           //显示定位层并可触发定位
-        aMap.setMyLocationType(AMap.LOCATION_TYPE_LOCATE);         //设置定位类型的定位模式
-
+        aMap.setMyLocationType(AMap.LOCATION_TYPE_MAP_FOLLOW);         //设置定位类型的定位模式
 
     }
 
@@ -122,7 +123,7 @@ public class MapFragment extends Fragment implements LocationSource,AMapLocation
             mLocationClient = new AMapLocationClient(getActivity());
             mLocationOption = new AMapLocationClientOption();
             //设置定位监听
-            mLocationClient.setLocationListener(this);        //设置定位监听
+            mLocationClient.setLocationListener(this);
             //设置为高精度定位模式
             mLocationOption.setLocationMode(AMapLocationClientOption.AMapLocationMode.Hight_Accuracy);
             //设置定位参数

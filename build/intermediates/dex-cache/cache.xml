@@ -1,2 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="/Users/bdx109/BdxProj/myGithub/w65-manager/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="21.1.2"
+        sha1="d524c231030f72b3c3bd1b2d6a9a4c53c43cc2c5">
+        <dex dex="/Users/bdx109/BdxProj/myGithub/w65-manager/app/build/intermediates/pre-dexed/debug/instant-run-bootstrap_d635bfaa972ed3786b3b6e518cc777c37f1eff26.jar" />
+    </item>
+
+</items>
