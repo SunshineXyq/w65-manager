@@ -177,6 +177,7 @@
             android:layout_marginLeft="20dp"/>
 
         <LinearLayout
+            android:id="@+id/ll_position"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
@@ -192,6 +193,14 @@
             <TextView
                 style="@style/device_details_text"
                 android:text="中关村双榆树知春里社区"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:src="@mipmap/position"
                 />
 
         </LinearLayout>

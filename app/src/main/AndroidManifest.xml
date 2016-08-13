@@ -36,7 +36,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:theme="@style/ActionBarNoTitle"></activity>
+            android:theme="@style/ActionBarNoTitle"/>
         <activity
             android:name=".activity.CommunityBroadcast"
             android:theme="@style/ActionBarNoTitle"></activity>
@@ -50,10 +50,13 @@
             android:name=".activity.DeviceDetails"
             android:theme="@style/ActionBarNoTitle"></activity>
 
+        <activity
+            android:name=".activity.BroadcastMessage"
+            android:theme="@style/ActionBarNoTitle"
+           />
+
         <service android:name="com.amap.api.location.APSService"></service>
 
-        <activity android:name=".activity.BroadcastMessage"
-                  android:theme="@style/ActionBarNoTitle"></activity>
     </application>
 
 </manifest>

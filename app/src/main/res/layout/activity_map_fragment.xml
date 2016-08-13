@@ -4,46 +4,6 @@
     android:layout_height="match_parent"
     >
 
-    <com.amap.api.maps.MapView
-        android:id="@+id/map"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </com.amap.api.maps.MapView>
-
-    <RadioGroup
-        android:id="@+id/gps_radio_group"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top|left"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:orientation="horizontal"
-        android:background="@color/grey"
-        >
-
-        <RadioButton
-            android:id="@+id/gps_locate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:textColor="@color/black"
-            android:text="定位"/>
-
-        <RadioButton
-            android:id="@+id/gps_follow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="跟随"/>
-
-        <RadioButton
-            android:id="@+id/gps_rotate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="旋转"/>
-
-    </RadioGroup>
 
     <TextView
         android:id="@+id/location_errInfo"
@@ -52,9 +12,17 @@
         android:layout_gravity="bottom|left"
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="10dp"
-        android:textColor="@color/red"
+        android:background="@color/red"
+        android:textColor="@color/darkgrey"
         android:text="TextView"
-        android:visibility="gone"
-        />
+        android:visibility="gone"/>
+
+    <com.amap.api.maps.MapView
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </com.amap.api.maps.MapView>
+
+
 
 </FrameLayout>

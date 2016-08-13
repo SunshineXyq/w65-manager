@@ -68,6 +68,16 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        int id = getIntent().getIntExtra("id",4);
+        System.out.println(id);
+        if (id == 1) {
+            setTabSelection(2);
+        }
+    }
+
+    @Override
     public void onClick(View v) {
         switch (v.getId()) {
 
@@ -176,7 +186,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
-            MyService.mConnection.disconnect();
+//            MyService.mConnection.disconnect();
         }
         return super.onKeyDown(keyCode, event);
     }
