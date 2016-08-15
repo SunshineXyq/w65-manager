@@ -1,6 +1,7 @@
 package com.bluedatax.wdsm.fragment;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.provider.SyncStateContract;
 import android.support.annotation.Nullable;
@@ -30,6 +31,7 @@ import com.amap.api.services.geocoder.GeocodeSearch;
 import com.amap.api.services.geocoder.RegeocodeQuery;
 import com.amap.api.services.geocoder.RegeocodeResult;
 import com.bluedatax.wdsm.R;
+import com.bluedatax.wdsm.activity.DeviceDetails;
 import com.bluedatax.wdsm.utils.AMapUtil;
 import com.bluedatax.wdsm.utils.Constants;
 import com.bluedatax.wdsm.utils.ToastUtil;
@@ -43,13 +45,22 @@ public class MapFragment extends Fragment implements LocationSource, AMapLocatio
     private AMapLocationClient mLocationClient;
     private AMapLocationClientOption mLocationOption;
     private TextView errInfo;
-    private LatLonPoint latLonPoint = new LatLonPoint(40.003662, 116.465271);
+    private LatLonPoint latLonPoint = new LatLonPoint(39.90403, 116.407525);
     private ProgressDialog progDialog;
     private GeocodeSearch geocodeSearch;
     private String addressName;
     private Marker regeoMarker;
     private Marker marker1;
     private Marker marker2;
+    private Marker marker3;
+    private Marker marker4;
+    private Marker marker5;
+    private Marker marker6;
+    private Marker marker7;
+    private Marker marker8;
+    private Marker marker9;
+    private Marker marker10;
+    private Marker mMarker;
 
 
     @Override
@@ -107,15 +118,48 @@ public class MapFragment extends Fragment implements LocationSource, AMapLocatio
         MarkerOptions markerOption = new MarkerOptions();
         markerOption.anchor(0.5f, 0.5f);         //图标摆放在地图上的基准点
         markerOption.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
+        mMarker = aMap.addMarker(markerOption);
+
+
+        markerOption.position(Constants.ZHAOYANGQU_ONE);
+        markerOption.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
         marker1 = aMap.addMarker(markerOption);
 
-        markerOption = new MarkerOptions();
-        markerOption.position(Constants.ZHAOYANGQU);
-        markerOption.title("西安市").snippet("西安市：34.341568, 108.940174");
-        markerOption.draggable(true);
-        markerOption.icon(BitmapDescriptorFactory
-                .fromResource(R.mipmap.arrow));
+        markerOption.position(Constants.ZHAOYANGQU_TWO);
+        markerOption.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
         marker2 = aMap.addMarker(markerOption);
+
+        markerOption.position(Constants.ZHAOYANGQU_THREE);
+        markerOption.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
+        marker3 = aMap.addMarker(markerOption);
+
+        markerOption.position(Constants.ZHAOYANGQU_FOUR);
+        markerOption.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
+        marker4 = aMap.addMarker(markerOption);
+
+        markerOption.position(Constants.ZHAOYANGQU_FIVE);
+        markerOption.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
+        marker5 = aMap.addMarker(markerOption);
+
+        markerOption.position(Constants.ZHAOYANGQU_SIX);
+        markerOption.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
+        marker6= aMap.addMarker(markerOption);
+
+        markerOption.position(Constants.ZHAOYANGQU_SENVEN);
+        markerOption.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
+        marker7 = aMap.addMarker(markerOption);
+
+        markerOption.position(Constants.ZHAOYANGQU_EIGHT);
+        markerOption.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
+        marker8 = aMap.addMarker(markerOption);
+
+        markerOption.position(Constants.ZHAOYANGQU_NINE);
+        markerOption.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
+        marker9 = aMap.addMarker(markerOption);
+
+        markerOption.position(Constants.ZHAOYANGQU_TEN);
+        markerOption.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
+        marker10 = aMap.addMarker(markerOption);
 
     }
 
@@ -279,11 +323,42 @@ public class MapFragment extends Fragment implements LocationSource, AMapLocatio
 
     @Override
     public boolean onMarkerClick(Marker marker) {
-        if (marker.equals(marker1)) {
+        Intent intent = new Intent(getActivity(), DeviceDetails.class);
+        if (marker.equals(mMarker)) {
             if (aMap != null) {
                 ToastUtil.show(getActivity(), "你点击的是" + marker.getTitle());
                 Log.d("marker","被点击");
             }
+        } else if (marker.equals(marker1)) {
+            startActivity(intent);
+            ToastUtil.show(getActivity(), "我是marker1");
+        } else if (marker.equals(marker2)) {
+            startActivity(intent);
+            ToastUtil.show(getActivity(), "我是marker2");
+        } else if (marker.equals(marker3)) {
+            startActivity(intent);
+            ToastUtil.show(getActivity(), "我是marker3");
+        } else if (marker.equals(marker4)) {
+            startActivity(intent);
+            ToastUtil.show(getActivity(), "我是marker4");
+        } else if (marker.equals(marker5)) {
+            startActivity(intent);
+            ToastUtil.show(getActivity(), "我是marker5");
+        } else if (marker.equals(marker6)) {
+            startActivity(intent);
+            ToastUtil.show(getActivity(), "我是marker6");
+        } else if (marker.equals(marker7)) {
+            startActivity(intent);
+            ToastUtil.show(getActivity(), "我是marker7");
+        } else if (marker.equals(marker8)) {
+            startActivity(intent);
+            ToastUtil.show(getActivity(), "我是marker8");
+        } else if (marker.equals(marker9)) {
+            startActivity(intent);
+            ToastUtil.show(getActivity(), "我是marker9");
+        } else if (marker.equals(marker10)) {
+            startActivity(intent);
+            ToastUtil.show(getActivity(), "我是marker10");
         }
         return false;
     }
